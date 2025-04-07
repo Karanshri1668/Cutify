@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Mobile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="player-view">
+            <!-- Background blobs -->
+            <div class="bg-blob"></div>
+            <div class="bg-blob"></div>
+
+            <div class="now-playing">
+                <div class="album-container">
+                    <div class="album-art" id="album-art">
+                        <img src="https://source.unsplash.com/random/500x500/?music,album" alt="Album Art">
+                    </div>
+                </div>
+                
+                <div class="song-info">
+                    <h2 id="song-title">Select a song</h2>
+                    <p id="song-artist">Artist</p>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <div class="time-info">
+                        <span id="current-time">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <div class="main-controls">
+                        <button class="control-btn" id="shuffle-btn" title="Shuffle">
+                            <i class="fas fa-random"></i>
+                        </button>
+                        <button class="control-btn" id="prev-btn" title="Previous">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button class="control-btn play-btn" id="play-btn" title="Play/Pause">
+                            <i class="fas fa-play" id="play-icon"></i>
+                        </button>
+                        <button class="control-btn" id="next-btn" title="Next">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                        <button class="control-btn" id="repeat-btn" title="Repeat">
+                            <i class="fas fa-redo"></i>
+                        </button>
+                    </div>
+                    <div class="secondary-controls">
+                        <button class="control-btn" id="random-btn" title="Play Random">
+                            <i class="fas fa-dice"></i>
+                        </button>
+                        <button class="control-btn" id="like-btn" title="Like">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="playlist-toggle" id="playlist-toggle">
+                <i class="fas fa-list"></i> Playlist
+            </button>
+        </div>
+
+        <div class="playlist-container" id="playlist-container">
+            <div class="playlist-header">
+                <div class="playlist-title-container">
+                    <h2>Playlist</h2>
+                    <button class="close-playlist" id="close-playlist">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search" placeholder="Search songs...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="playlist">
+                <div id="track-list">
+                    <!-- Tracks will be added here dynamically -->
+                </div>
+                <div class="no-results" id="no-results" style="display: none;">
+                    <i class="fas fa-music" style="font-size: 2rem; margin-bottom: 10px; opacity: 0.5;"></i>
+                    <p>No songs found</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>
